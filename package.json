@@ -6,6 +6,9 @@
   "author": "Tom Rogers <3911927+tomprogers@users.noreply.github.com>",
   "license": "PRIVATE",
   "private": true,
+  "scripts": {
+    "test-cli": "nodemon -q -w src -e 'js,spec.js' -x 'cat fixtures/cli-input.txt | src/index.js'"
+  },
   "dependencies": {
     "jest": "^29.5.0"
   }

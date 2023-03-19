@@ -1,0 +1,5 @@
+main
+> child-1 @ base-commit-0
+>> child-2 @ base-commit-1
+> child-3 @ base-commit-2
+>> child-4 @ base-commit-3
