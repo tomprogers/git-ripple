@@ -1,0 +1,12 @@
+{
+  "name": "git-ripple",
+  "version": "0.0.1",
+  "description": "Tool for creating chained git rebase commands",
+  "main": "src/index.js",
+  "author": "Tom Rogers <3911927+tomprogers@users.noreply.github.com>",
+  "license": "PRIVATE",
+  "private": true,
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
