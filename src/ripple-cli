@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const ripple = require('./ripple')
+
+
+const EXIT_CODES = {
+	GOOD: 0,
+	BAD: 1
+}
+
+async function getInput() {
+	return new Promise(resolve => {
+		let stdin = ''
+
+		process.stdin.resume()
+		process.stdin.on('data', data => stdin += data)
+		process.stdin.on('end', () => resolve(stdin))
+	})
+}
+
+
+;(async () => {
+	let input = await getInput()
+
+	let commands
+	try {
+		commands = ripple(input)
+
+	} catch( exc ) {
+		switch(exc.message) {
+			default:
+				console.error('git-ripple: ' + exc.message)
+				process.exit(EXIT_CODES.BAD)
+				return false
+		}
+	}
+
+	if(commands.length) {
+		console.log(commands.join('\n'))
+	}
+
+	process.exit(EXIT_CODES.GOOD)
+})()
